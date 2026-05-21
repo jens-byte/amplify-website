@@ -1,10 +1,147 @@
 ---
-import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import SectorTemplate from '../components/SectorTemplate.astro';
-
-const entry = await getEntry('sectors', 'voor-vastgoed');
 ---
-<Layout title={entry.data.title} description={entry.data.description}>
-  <SectorTemplate data={entry.data} />
+<Layout title="Voor Vastgoed" description="Meer halen uit elk pand — zonder extra werk voor je team. AI en data voor vastgoedkantoren.">
+
+  <!-- Hero -->
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Voor vastgoedkantoren</p>
+      <h1 class="text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
+        Meer halen uit elk pand — zonder extra werk voor je team.
+      </h1>
+      <p class="text-xl text-white/70 mb-10 max-w-2xl leading-relaxed">
+        We maken je website slimmer, overtuigender en sneller — zodat kopers langer kijken, panden sneller verkopen, en je aanbod beter rankt. Wij regelen alles.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#oplossingen" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Bekijk onze oplossingen ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Probleem -->
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-8">De uitdagingen in vastgoed vandaag</h2>
+      <p class="text-lg text-ink/70 mb-6">Je aanbod is je etalage — maar die etalage doet niet altijd wat ze zou moeten doen.</p>
+      <ul class="space-y-4">
+        {[
+          'Renovatiepanden trekken minder kopers, omdat weinig mensen het potentieel kunnen inschatten op basis van een lege of versleten ruimte.',
+          'Pandfiches zijn vaak onvolledig of inconsistent — wat je ranking schaadt op je eigen site én op aggregatoren zoals Immoweb en Zimmo.',
+          'Je website laadt traag door de hoeveelheid foto\'s, waardoor bezoekers afhaken voor ze het pand goed bekeken hebben.',
+          'Bezoekers met een specifieke vraag vinden niets als ze niet exact de juiste zoekwoorden gebruiken.',
+          'Je team heeft geen tijd om dit zelf op te lossen — en een dev of marketeer aanwerven is een grote stap.',
+        ].map(item => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+            <span class="text-ink/80">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Oplossingen -->
+  <section id="oplossingen" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-12">Wat we voor vastgoedkantoren doen</h2>
+
+      <div class="mb-12">
+        <div class="inline-flex items-center gap-2 bg-ink text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          Foundation — de basis voor elk traject
+        </div>
+        <p class="text-ink/70 mb-6 max-w-2xl">We starten elk traject met de Foundation — twee oplossingen die op elk vastgoedkantoor van toepassing zijn.</p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="/producten/image-cdn" class="bg-cloud-100 rounded-3xl p-6 hover:shadow-md transition group">
+            <h3 class="font-bold text-lg mb-2 group-hover:text-spray-darker transition">Image CDN</h3>
+            <p class="text-ink/70">Je pandfoto's laden razendsnel, hoe groot je aanbod ook is. Betere bezoekervaring, betere Google-ranking.</p>
+            <span class="text-spray-darker text-sm font-semibold mt-3 inline-block">Meer info →</span>
+          </a>
+          <a href="/producten/data-enrichment" class="bg-cloud-100 rounded-3xl p-6 hover:shadow-md transition group">
+            <h3 class="font-bold text-lg mb-2 group-hover:text-spray-darker transition">Data Enrichment</h3>
+            <p class="text-ink/70">Onvolledige of inconsistente pandfiches worden automatisch aangevuld en verrijkt. Beter vindbaar op je site, beter gerankt op aggregatoren.</p>
+            <span class="text-spray-darker text-sm font-semibold mt-3 inline-block">Meer info →</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="inline-flex items-center gap-2 bg-spray-lightest text-spray-darker px-4 py-2 rounded-full text-sm font-semibold mb-6">
+          Add-ons — voor wie er het maximum uit wil halen
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="/producten/virtual-staging" class="bg-cloud-100 rounded-3xl p-6 hover:shadow-md transition group">
+            <h3 class="font-bold mb-2 group-hover:text-spray-darker transition">Real Estate Virtual Staging</h3>
+            <p class="text-ink/70 text-sm">Kopers transformeren elke pandfoto in een ingerichte, gerenoveerde versie — live in hun browser.</p>
+            <span class="text-spray-darker text-sm font-semibold mt-3 inline-block">Meer info →</span>
+          </a>
+          <a href="/producten/conversational-smart-search" class="bg-cloud-100 rounded-3xl p-6 hover:shadow-md transition group">
+            <h3 class="font-bold mb-2 group-hover:text-spray-darker transition">Conversational Smart Search</h3>
+            <p class="text-ink/70 text-sm">Bezoekers vinden wat ze zoeken — ook bij vage vragen als "huis met tuin in Gent onder 400k".</p>
+            <span class="text-spray-darker text-sm font-semibold mt-3 inline-block">Meer info →</span>
+          </a>
+          <a href="/producten/chatbot-assistant" class="bg-cloud-100 rounded-3xl p-6 hover:shadow-md transition group">
+            <h3 class="font-bold mb-2 group-hover:text-spray-darker transition">Chatbot Assistant</h3>
+            <p class="text-ink/70 text-sm">Bezoekers krijgen direct antwoord op hun vragen, 24/7. Volledig getraind op jouw aanbod en kantoor.</p>
+            <span class="text-spray-darker text-sm font-semibold mt-3 inline-block">Meer info →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hoe het werkt -->
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Hoe het werkt voor jouw kantoor</h2>
+      <p class="text-ink/70 mb-10">Geen lange implementatietrajecten, geen developer nodig.</p>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { n: '1', title: 'Kennismaking', body: 'We bekijken samen je website, je aanbod en waar je vandaag tegenaan loopt. Geen verkooppraatje — gewoon luisteren.' },
+          { n: '2', title: 'Voorstel op maat', body: 'We stellen een traject voor: welke oplossingen voor jouw kantoor zinvol zijn, wat het kost, en wat je mag verwachten.' },
+          { n: '3', title: 'Setup zonder gedoe', body: 'Wij zetten alles op. Je team merkt er niets van behalve het eindresultaat. Geen aanpassingen aan je website.' },
+          { n: '4', title: 'Live en beheerd', body: 'Vanaf dag één draait het. Wij blijven monitoren, bijsturen en verbeteren. Maandelijks krijg je een overzicht.' },
+        ].map(step => (
+          <div class="bg-white rounded-3xl p-6 flex gap-4">
+            <div class="w-10 h-10 bg-spray text-ink rounded-full flex items-center justify-center font-bold shrink-0">{step.n}</div>
+            <div>
+              <h3 class="font-bold mb-1">{step.title}</h3>
+              <p class="text-ink/70 text-sm">{step.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Waarom -->
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-10">Waarom vastgoedkantoren voor Amplify kiezen</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Gebouwd voor vastgoed, niet generiek', body: 'Onze oplossingen zijn afgestemd op hoe vastgoedwebsites werken — van pandfiches tot zoekfilters tot publicatie op aggregatoren.' },
+          { title: 'Werkt met je bestaande omgeving', body: 'Welk CRM, welk publicatieplatform of welke website je ook gebruikt — wij sluiten erop aan. Geen migratie.' },
+          { title: 'Eén vast aanspreekpunt', body: 'Je krijgt iemand bij Amplify die je dossier kent, je aanbod begrijpt, en die je gewoon kan bellen.' },
+          { title: 'Belgisch, lokaal, betrokken', body: 'We zitten in Gent. We kennen de Belgische vastgoedmarkt en de manier waarop Belgische kantoren werken.' },
+        ].map(item => (
+          <div class="border border-ink/10 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-ink/70">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Klaar om meer uit je aanbod te halen?</h2>
+      <p class="text-white/70 mb-8">We bekijken graag samen wat er vandaag op je website gebeurt en wat er beter kan. Vrijblijvend, en altijd eerlijk.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
 </Layout>
