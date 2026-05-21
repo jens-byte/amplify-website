@@ -4,6 +4,7 @@ interface Props {
   description?: string;
 }
 const { title, description = 'Wij maken websites en webshops slimmer, overtuigender en sneller.' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 <!doctype html>
 <html lang="nl">
@@ -12,7 +13,7 @@ const { title, description = 'Wij maken websites en webshops slimmer, overtuigen
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title} — Amplify Digital</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -27,7 +28,7 @@ const { title, description = 'Wij maken websites en webshops slimmer, overtuigen
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-20">
           <a href="/" class="flex items-center" aria-label="Amplify home">
-            <img src="/logo.svg" alt="Amplify" class="h-7 w-auto" />
+            <img src={`${base}logo.svg`} alt="Amplify" class="h-7 w-auto" />
           </a>
           <div class="hidden md:flex items-center gap-1">
             <div class="relative group">
@@ -78,7 +79,7 @@ const { title, description = 'Wij maken websites en webshops slimmer, overtuigen
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
           <div>
             <div class="mb-4">
-              <img src="/logo-white.svg" alt="Amplify" class="h-7 w-auto" />
+              <img src={`${base}logo-white.svg`} alt="Amplify" class="h-7 w-auto" />
             </div>
             <p class="text-sm leading-relaxed">Slimmer. Overtuigender. Sneller.<br/>Volledig voor je geregeld.</p>
           </div>
@@ -119,5 +120,20 @@ const { title, description = 'Wij maken websites en webshops slimmer, overtuigen
         </div>
       </div>
     </footer>
+    <script>
+      // Prefix all root-relative links with the deployment base path.
+      // import.meta.env.BASE_URL is inlined at build time (e.g. '/amplify-website/').
+      // When a custom domain is used and base is removed, BASE_URL becomes '/' and
+      // the trimmed value is '', so the block is skipped entirely.
+      const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+      if (base) {
+        document.querySelectorAll('a[href^="/"]').forEach(a => {
+          const href = a.getAttribute('href');
+          if (!href.startsWith(base)) {
+            a.setAttribute('href', base + href);
+          }
+        });
+      }
+    </script>
   </body>
 </html>
