@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const ecommerce = [
+  { name: 'Shopify',     logo: 'https://cdn.simpleicons.org/shopify' },
+  { name: 'WooCommerce', logo: 'https://cdn.simpleicons.org/woocommerce' },
+  { name: 'Magento',     logo: 'https://cdn.simpleicons.org/magento' },
+  { name: 'PrestaShop',  logo: 'https://cdn.simpleicons.org/prestashop' },
+  { name: 'Shopware',    logo: 'https://cdn.simpleicons.org/shopware' },
+  { name: 'Lightspeed',  logo: 'https://logo.clearbit.com/lightspeedhq.com' },
+];
+
+const vastgoed = [
+  { name: 'Sweepbright', logo: 'https://logo.clearbit.com/sweepbright.com' },
+  { name: 'Whise',       logo: 'https://logo.clearbit.com/whise.eu' },
+  { name: 'Immoweb',     logo: 'https://logo.clearbit.com/immoweb.be' },
+  { name: 'Immovlan',    logo: 'https://logo.clearbit.com/immovlan.be' },
+  { name: 'Zimmo',       logo: 'https://logo.clearbit.com/zimmo.be' },
+];
+
+const cms = [
+  { name: 'WordPress',   logo: 'https://cdn.simpleicons.org/wordpress' },
+  { name: 'Webflow',     logo: 'https://cdn.simpleicons.org/webflow' },
+  { name: 'Drupal',      logo: 'https://cdn.simpleicons.org/drupal' },
+  { name: 'Squarespace', logo: 'https://cdn.simpleicons.org/squarespace' },
+  { name: 'Wix',         logo: 'https://cdn.simpleicons.org/wix' },
+];
+---
+<Layout title="Integraties" description="Amplify werkt naadloos samen met de platformen die jij al gebruikt — van Shopify tot WordPress, van Immoweb tot Whise.">
+
+  <!-- Hero -->
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Integraties</p>
+      <h1 class="text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
+        We werken op wat jij al hebt.
+      </h1>
+      <p class="text-xl text-white/70 max-w-2xl leading-relaxed">
+        Geen migratie, geen herbouw. Onze oplossingen sluiten aan op je bestaande platform — of dat nu Shopify, WordPress, Whise of een maatwerk-site is.
+      </p>
+    </div>
+  </section>
+
+  <!-- E-commerce -->
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10">
+        <h2 class="text-3xl font-bold tracking-tight mb-2">E-commerce</h2>
+        <p class="text-ink/60">De meestgebruikte webshop-platforms, volledig ondersteund.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+        {ecommerce.map(item => (
+          <div class="bg-cloud-100 rounded-2xl p-5 flex flex-col items-center gap-3 hover:shadow-md transition group">
+            <div class="h-10 flex items-center justify-center">
+              <img src={item.logo} alt={item.name} class="h-8 max-w-[80px] object-contain" loading="lazy" />
+            </div>
+            <span class="text-xs font-medium text-ink/60 text-center">{item.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Vastgoed -->
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10">
+        <h2 class="text-3xl font-bold tracking-tight mb-2">Vastgoed</h2>
+        <p class="text-ink/60">Software en portalen die vastgoedkantoren dagelijks gebruiken.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        {vastgoed.map(item => (
+          <div class="bg-white rounded-2xl p-5 flex flex-col items-center gap-3 hover:shadow-md transition group">
+            <div class="h-10 flex items-center justify-center">
+              <img src={item.logo} alt={item.name} class="h-8 max-w-[80px] object-contain" loading="lazy" />
+            </div>
+            <span class="text-xs font-medium text-ink/60 text-center">{item.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CMS -->
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10">
+        <h2 class="text-3xl font-bold tracking-tight mb-2">CMS & website-platforms</h2>
+        <p class="text-ink/60">Van WordPress tot Webflow — onze scripts en API's draaien op elke bestaande site.</p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+        {cms.map(item => (
+          <div class="bg-cloud-100 rounded-2xl p-5 flex flex-col items-center gap-3 hover:shadow-md transition group">
+            <div class="h-10 flex items-center justify-center">
+              <img src={item.logo} alt={item.name} class="h-8 max-w-[80px] object-contain" loading="lazy" />
+            </div>
+            <span class="text-xs font-medium text-ink/60 text-center">{item.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom / API -->
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-10">
+        <h2 class="text-3xl font-bold tracking-tight mb-2">Maatwerk & API</h2>
+        <p class="text-ink/60">Staat jouw platform er niet bij? Wij sluiten ook aan via REST API, webhooks of een maatwerk-integratie.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="bg-white rounded-2xl p-6 border border-ink/5">
+          <h3 class="font-bold mb-2">REST API</h3>
+          <p class="text-ink/60 text-sm">We leveren een volledige API waarmee je onze diensten integreert in elk systeem.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-ink/5">
+          <h3 class="font-bold mb-2">JavaScript snippet</h3>
+          <p class="text-ink/60 text-sm">Voor zoekfunctie en chatbot volstaat één scriptregel in je bestaande site.</p>
+        </div>
+        <div class="bg-white rounded-2xl p-6 border border-ink/5">
+          <h3 class="font-bold mb-2">Maatwerk-integratie</h3>
+          <p class="text-ink/60 text-sm">Zelfgebouwde platform of ongewoon systeem? We bekijken het samen en bouwen wat nodig is.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">Staat jouw platform er niet bij?</h2>
+      <p class="text-white/70 mb-8">Vertel ons wat je gebruikt. We kijken samen of en hoe we kunnen aansluiten.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Neem contact op</a>
+    </div>
+  </section>
+
+</Layout>
