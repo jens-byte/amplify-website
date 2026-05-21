@@ -1,0 +1,123 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = 'Wij maken websites en webshops slimmer, overtuigender en sneller.' } = Astro.props;
+---
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} — Amplify Digital</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style is:global>
+      h1, h2, h3, h4, h5, h6 { font-family: 'Sora', system-ui, sans-serif; letter-spacing: -0.01em; }
+      h1 { letter-spacing: -0.025em; }
+      body { font-feature-settings: "cv11", "ss01"; }
+    </style>
+  </head>
+  <body class="bg-white text-ink antialiased font-body">
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-ink/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          <a href="/" class="flex items-center" aria-label="Amplify home">
+            <img src="/logo.svg" alt="Amplify" class="h-7 w-auto" />
+          </a>
+          <div class="hidden md:flex items-center gap-1">
+            <div class="relative group">
+              <button class="px-4 py-2 text-sm font-medium text-ink/70 hover:text-ink rounded-full transition flex items-center gap-1">
+                Sectoren
+                <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="absolute top-full left-0 mt-2 w-56 bg-white rounded-3xl shadow-lg shadow-ink/5 border border-ink/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all p-2">
+                <a href="/voor-vastgoed" class="block px-4 py-3 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">Vastgoed</a>
+                <a href="/voor-ecommerce" class="block px-4 py-3 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">E-commerce</a>
+                <a href="/voor-musea" class="block px-4 py-3 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">Musea & cultuur</a>
+              </div>
+            </div>
+            <div class="relative group">
+              <button class="px-4 py-2 text-sm font-medium text-ink/70 hover:text-ink rounded-full transition flex items-center gap-1">
+                Producten
+                <svg class="w-3.5 h-3.5 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </button>
+              <div class="absolute top-full left-0 mt-2 w-72 bg-white rounded-3xl shadow-lg shadow-ink/5 border border-ink/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all p-2">
+                <a href="/producten" class="block px-4 py-3 text-sm font-semibold text-ink hover:bg-cloud-100 rounded-2xl transition border-b border-ink/5 mb-1">Alle producten</a>
+                <a href="/producten/image-cdn" class="block px-4 py-2.5 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">Image CDN</a>
+                <a href="/producten/data-enrichment" class="block px-4 py-2.5 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">Data Enrichment</a>
+                <a href="/producten/virtual-staging" class="block px-4 py-2.5 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">Virtual Staging</a>
+                <a href="/producten/content-enrichment-publishing" class="block px-4 py-2.5 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">Content Enrichment & Publishing</a>
+                <a href="/producten/product-video-generation" class="block px-4 py-2.5 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">Product Video Generation</a>
+                <a href="/producten/conversational-smart-search" class="block px-4 py-2.5 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">Conversational Smart Search</a>
+                <a href="/producten/chatbot-assistant" class="block px-4 py-2.5 text-sm text-ink/80 hover:bg-cloud-100 rounded-2xl transition">Chatbot Assistant</a>
+              </div>
+            </div>
+            <a href="/aanpak" class="px-4 py-2 text-sm font-medium text-ink/70 hover:text-ink rounded-full transition">Aanpak</a>
+            <a href="/prijzen" class="px-4 py-2 text-sm font-medium text-ink/70 hover:text-ink rounded-full transition">Prijzen</a>
+            <a href="/over" class="px-4 py-2 text-sm font-medium text-ink/70 hover:text-ink rounded-full transition">Over</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="/voor-bureaus" class="hidden md:block text-sm font-medium text-ink/60 hover:text-ink transition">Voor bureaus</a>
+            <a href="/contact" class="bg-ink text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-ink-soft transition">
+              Plan een kennismaking
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <slot />
+    </main>
+    <footer class="bg-ink text-white/60 mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+          <div>
+            <div class="mb-4">
+              <img src="/logo-white.svg" alt="Amplify" class="h-7 w-auto" />
+            </div>
+            <p class="text-sm leading-relaxed">Slimmer. Overtuigender. Sneller.<br/>Volledig voor je geregeld.</p>
+          </div>
+          <div>
+            <h3 class="text-white font-heading font-semibold text-sm mb-4 uppercase tracking-wider">Sectoren</h3>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="/voor-vastgoed" class="hover:text-spray transition">Vastgoed</a></li>
+              <li><a href="/voor-ecommerce" class="hover:text-spray transition">E-commerce</a></li>
+              <li><a href="/voor-musea" class="hover:text-spray transition">Musea & cultuur</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-heading font-semibold text-sm mb-4 uppercase tracking-wider">Producten</h3>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="/producten/image-cdn" class="hover:text-spray transition">Image CDN</a></li>
+              <li><a href="/producten/data-enrichment" class="hover:text-spray transition">Data Enrichment</a></li>
+              <li><a href="/producten/virtual-staging" class="hover:text-spray transition">Virtual Staging</a></li>
+              <li><a href="/producten/content-enrichment-publishing" class="hover:text-spray transition">Content Enrichment</a></li>
+              <li><a href="/producten/product-video-generation" class="hover:text-spray transition">Product Video</a></li>
+              <li><a href="/producten/conversational-smart-search" class="hover:text-spray transition">Smart Search</a></li>
+              <li><a href="/producten/chatbot-assistant" class="hover:text-spray transition">Chatbot Assistant</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-white font-heading font-semibold text-sm mb-4 uppercase tracking-wider">Bedrijf</h3>
+            <ul class="space-y-2.5 text-sm">
+              <li><a href="/aanpak" class="hover:text-spray transition">Aanpak</a></li>
+              <li><a href="/prijzen" class="hover:text-spray transition">Prijzen</a></li>
+              <li><a href="/over" class="hover:text-spray transition">Over</a></li>
+              <li><a href="/voor-bureaus" class="hover:text-spray transition">Voor bureaus</a></li>
+              <li><a href="/contact" class="hover:text-spray transition">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+          <p>© 2025 Amplify Digital. Beelbroekstraat 99, 9040 Sint-Amandsberg, België.</p>
+          <a href="/contact" class="bg-spray text-ink font-semibold px-5 py-2.5 rounded-full hover:bg-spray-light transition text-sm">Plan een kennismaking →</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

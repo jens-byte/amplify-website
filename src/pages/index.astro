@@ -1,0 +1,196 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const entry = await getEntry('home', 'home');
+const { hero, value_props, audience, how, why, testimonial, cta } = entry.data;
+
+// Render *word* as <span class="text-spray">word</span>
+function highlight(text: string) {
+  return text.replace(/\*([^*]+)\*/g, '<span class="text-spray">$1</span>');
+}
+---
+<Layout title={entry.data.title} description={entry.data.description}>
+
+  <!-- Hero -->
+  <section class="relative bg-ink text-white py-28 sm:py-36 px-4 overflow-hidden">
+    <div class="absolute -top-32 -right-32 w-[600px] h-[600px] bg-spray/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-40 -left-32 w-[500px] h-[500px] bg-moss/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-5xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 text-sm text-white/80 mb-8">
+        <span class="w-2 h-2 bg-spray rounded-full animate-pulse"></span>
+        {hero.badge}
+      </div>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] mb-8" set:html={highlight(hero.title)} />
+      <p class="text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">{hero.subtitle}</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href={hero.cta1_href} class="bg-spray text-ink font-semibold px-6 py-3.5 rounded-full hover:bg-spray-light transition text-base">{hero.cta1_text}</a>
+        <a href={hero.cta2_href} class="bg-white/5 text-white font-semibold px-6 py-3.5 rounded-full hover:bg-white/10 transition text-base border border-white/15">{hero.cta2_text}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slimmer / Overtuigender / Sneller -->
+  <section class="py-24 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 max-w-3xl mx-auto">
+        <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6">{value_props.title}</h2>
+        <p class="text-lg text-ink/70 leading-relaxed">{value_props.intro}</p>
+      </div>
+
+      <div class="grid lg:grid-cols-3 gap-6">
+        <!-- Slimmer -->
+        <div class="bg-cloud-100 rounded-3xl p-8">
+          <div class="text-3xl mb-4">🧠</div>
+          <h3 class="text-2xl font-bold mb-3">{value_props.slimmer_title}</h3>
+          <p class="text-ink/70 mb-6 leading-relaxed">{value_props.slimmer_body}</p>
+          <div class="space-y-3 text-sm">
+            <a href="/producten/conversational-smart-search" class="block bg-white rounded-2xl p-4 hover:shadow-sm transition group">
+              <h4 class="font-semibold mb-1 group-hover:text-spray-darker transition">Conversational Smart Search</h4>
+              <p class="text-ink/60">Een zoekfunctie die natuurlijke taal begrijpt.</p>
+            </a>
+            <a href="/producten/chatbot-assistant" class="block bg-white rounded-2xl p-4 hover:shadow-sm transition group">
+              <h4 class="font-semibold mb-1 group-hover:text-spray-darker transition">Chatbot Assistant</h4>
+              <p class="text-ink/60">Een AI-assistent die alleen jouw business kent.</p>
+            </a>
+            <a href="/producten/data-enrichment" class="block bg-white rounded-2xl p-4 hover:shadow-sm transition group">
+              <h4 class="font-semibold mb-1 group-hover:text-spray-darker transition">Data Enrichment</h4>
+              <p class="text-ink/60">Rijke, volledige, consistente data onder je site.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Overtuigender -->
+        <div class="bg-cloud-100 rounded-3xl p-8">
+          <div class="text-3xl mb-4">💎</div>
+          <h3 class="text-2xl font-bold mb-3">{value_props.overtuigender_title}</h3>
+          <p class="text-ink/70 mb-6 leading-relaxed">{value_props.overtuigender_body}</p>
+          <div class="space-y-3 text-sm">
+            <a href="/producten/content-enrichment-publishing" class="block bg-white rounded-2xl p-4 hover:shadow-sm transition group">
+              <h4 class="font-semibold mb-1 group-hover:text-spray-darker transition">Content Enrichment & Publishing</h4>
+              <p class="text-ink/60">Unieke, SEO- en AI-vriendelijke content op schaal.</p>
+            </a>
+            <a href="/producten/virtual-staging" class="block bg-white rounded-2xl p-4 hover:shadow-sm transition group">
+              <h4 class="font-semibold mb-1 group-hover:text-spray-darker transition">Real Estate Virtual Staging</h4>
+              <p class="text-ink/60">Kopers transformeren elke pandfoto live.</p>
+            </a>
+            <a href="/producten/product-video-generation" class="block bg-white rounded-2xl p-4 hover:shadow-sm transition group">
+              <h4 class="font-semibold mb-1 group-hover:text-spray-darker transition">Product Video Generation</h4>
+              <p class="text-ink/60">Automatische productvideo's voor je catalogus.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Sneller -->
+        <div class="bg-cloud-100 rounded-3xl p-8">
+          <div class="text-3xl mb-4">⚡</div>
+          <h3 class="text-2xl font-bold mb-3">{value_props.sneller_title}</h3>
+          <p class="text-ink/70 mb-6 leading-relaxed">{value_props.sneller_body}</p>
+          <div class="space-y-3 text-sm">
+            <a href="/producten/image-cdn" class="block bg-white rounded-2xl p-4 hover:shadow-sm transition group">
+              <h4 class="font-semibold mb-1 group-hover:text-spray-darker transition">Image CDN</h4>
+              <p class="text-ink/60">Hoogresolutie foto's, razendsnel geladen.</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/producten" class="inline-flex items-center gap-2 font-semibold text-ink hover:text-spray-darker transition">
+          Bekijk alle producten →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Voor wie -->
+  <section class="py-24 px-4 bg-cloud-100">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16 max-w-2xl mx-auto">
+        <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6">{audience.title}</h2>
+        <p class="text-lg text-ink/70 leading-relaxed">{audience.intro}</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/voor-vastgoed" class="bg-white rounded-3xl p-8 hover:shadow-md transition group">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-spray-darker transition">Vastgoed</h3>
+          <p class="text-ink/70 mb-4">{audience.vastgoed}</p>
+          <span class="text-spray-darker text-sm font-semibold">Bekijk onze aanpak →</span>
+        </a>
+        <a href="/voor-ecommerce" class="bg-white rounded-3xl p-8 hover:shadow-md transition group">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-spray-darker transition">E-commerce</h3>
+          <p class="text-ink/70 mb-4">{audience.ecommerce}</p>
+          <span class="text-spray-darker text-sm font-semibold">Bekijk onze aanpak →</span>
+        </a>
+        <a href="/voor-musea" class="bg-white rounded-3xl p-8 hover:shadow-md transition group">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-spray-darker transition">Musea & cultuur</h3>
+          <p class="text-ink/70 mb-4">{audience.musea}</p>
+          <span class="text-spray-darker text-sm font-semibold">Bekijk onze aanpak →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hoe we werken -->
+  <section class="py-24 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-center mb-4">{how.title}</h2>
+      <p class="text-center text-ink/70 mb-16 max-w-xl mx-auto">{how.intro}</p>
+      <div class="grid sm:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-spray text-ink rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-5">1</div>
+          <h3 class="font-bold text-lg mb-2">{how.step1_title}</h3>
+          <p class="text-ink/70 text-sm leading-relaxed">{how.step1_body}</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-spray text-ink rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-5">2</div>
+          <h3 class="font-bold text-lg mb-2">{how.step2_title}</h3>
+          <p class="text-ink/70 text-sm leading-relaxed">{how.step2_body}</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-spray text-ink rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-5">3</div>
+          <h3 class="font-bold text-lg mb-2">{how.step3_title}</h3>
+          <p class="text-ink/70 text-sm leading-relaxed">{how.step3_body}</p>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="/aanpak" class="text-ink font-semibold hover:text-spray-darker transition">Lees meer over onze aanpak →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waarom Amplify -->
+  <section class="py-24 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-center mb-4">{why.title}</h2>
+      <p class="text-center text-ink/70 mb-16 max-w-2xl mx-auto">{why.intro}</p>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {why.items.map(item => (
+          <div class="bg-white rounded-3xl p-7">
+            <h3 class="font-bold text-lg mb-2">{item.title}</h3>
+            <p class="text-ink/70">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="py-24 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <blockquote class="text-2xl italic text-ink/80 leading-relaxed mb-6 font-heading">
+        "{testimonial.quote}"
+      </blockquote>
+      <p class="text-ink/50 text-sm">{testimonial.attribution}</p>
+    </div>
+  </section>
+
+  <!-- Slot CTA -->
+  <section class="py-28 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-6">{cta.title}</h2>
+      <p class="text-white/70 text-lg mb-10 leading-relaxed">{cta.body}</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition text-base inline-block">{cta.cta_text}</a>
+    </div>
+  </section>
+
+</Layout>

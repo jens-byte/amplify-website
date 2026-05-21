@@ -1,0 +1,71 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Over Amplify" description="We helpen bedrijven mee in de AI-revolutie — zonder dat ze er zelf in moeten duiken.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Over Amplify</h1>
+      <p class="text-2xl text-slate-300 font-medium mb-4">We helpen bedrijven mee in de AI-revolutie — zonder dat ze er zelf in moeten duiken.</p>
+      <p class="text-xl text-slate-400 max-w-2xl">Amplify is opgericht vanuit één overtuiging: AI en data hebben pas waarde als ze echt iets opleveren voor je business. En dat is niet vanzelfsprekend.</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Waarom we Amplify gestart zijn</h2>
+      <p class="text-slate-600 mb-4">We zagen het overal gebeuren. Bedrijven die wisten dat AI belangrijk werd, maar geen idee hadden waar te starten. Tools die werden aangekocht en nooit goed gebruikt. Beloftes die niet werden ingelost. En een groeiend gevoel van "we zijn aan het achterop raken."</p>
+      <p class="text-slate-600 mb-6">We geloven dat het anders kan. Niet door nóg een platform te bouwen dat klanten zelf moeten leren — maar door als partner naast hen te staan en het werk voor hen te doen.</p>
+      <p class="text-xl font-bold text-slate-900">Niet zomaar AI-tools verkopen. Wel zorgen dat AI werkt voor jouw business.</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Het team</h2>
+      <div class="grid sm:grid-cols-2 gap-8">
+        <div class="bg-cloud-100 rounded-3xl p-8">
+          <div class="w-16 h-16 bg-slate-200 rounded-full mb-4 flex items-center justify-center text-2xl">👤</div>
+          <h3 class="font-bold text-xl mb-1">Nico De Gols</h3>
+          <p class="text-brand-600 font-semibold text-sm mb-3">CTO & medeoprichter</p>
+          <p class="text-slate-500 text-sm italic">Bio volgt.</p>
+        </div>
+        <div class="bg-cloud-100 rounded-3xl p-8">
+          <div class="w-16 h-16 bg-slate-200 rounded-full mb-4 flex items-center justify-center text-2xl">👤</div>
+          <h3 class="font-bold text-xl mb-1">Jens Terryn</h3>
+          <p class="text-brand-600 font-semibold text-sm mb-3">COO & medeoprichter, Key Account Manager</p>
+          <p class="text-slate-500 text-sm italic">Bio volgt.</p>
+        </div>
+      </div>
+      <p class="text-slate-600 mt-8 max-w-xl">We zitten in Gent, België. Met een klein team. En dat houden we voorlopig graag zo: het laat ons toe om elke klant écht te kennen, in plaats van een dossiernummer te zijn.</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Waar we voor staan</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Resultaat, geen activiteit', body: 'We meten ons succes aan wat we voor klanten opleveren — niet aan hoeveel we doen.' },
+          { title: 'Eerlijkheid boven verkoop', body: 'We zeggen ja wanneer we kunnen helpen, en nee wanneer we dat niet kunnen. Een verkocht product zonder resultaat kost ons meer dan een deal die we niet sluiten.' },
+          { title: 'Belgisch en bereikbaar', body: 'We werken vanuit Gent, met Belgische klanten als vertrekpunt. Korte lijnen, persoonlijk contact, dezelfde tijdzone.' },
+          { title: 'Bijblijven voor jou', body: 'AI evolueert snel. Wij blijven elke dag bij — zodat jij dat niet hoeft.' },
+        ].map(item => (
+          <div class="bg-white rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-600">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Praat met ons</h2>
+      <p class="text-white/70 mb-8">We horen graag wat je doet en waar je naartoe wilt. Geen verkooppraatje — gewoon kennismaken.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

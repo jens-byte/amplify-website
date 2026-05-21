@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Data Enrichment" description="Rijke, complete data — automatisch. Je data wordt aangevuld, verrijkt en consistent gemaakt.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Foundation · Alle sectoren</p>
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Data Enrichment</h1>
+      <p class="text-2xl text-slate-300 font-medium mb-4">Rijke, complete data — automatisch.</p>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl">Je content, productdata of collectiegegevens worden automatisch aangevuld, verrijkt en consistent gemaakt. De basis waarop alles wat we daarna doen beter werkt.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#hoe-het-werkt" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Lees hoe het werkt ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Goede data is de basis. Maar bijna niemand heeft die volledig op orde.</h2>
+      <p class="text-slate-600 mb-6">Of het nu over panden, producten of collectiestukken gaat: de meeste organisaties hebben data die niet helemaal klopt. Onvolledig. Inconsistent. Verouderd.</p>
+      <ul class="space-y-4">
+        {[
+          'Ontbrekende of inconsistente attributen — kamertelling, afmetingen, materiaal, periode, kleur. Wat er niet instaat, kan niemand vinden.',
+          'Verschillende termen voor hetzelfde concept ("zolder" vs "mansarde"). Filters werken niet, zoekresultaten kloppen niet.',
+          'Korte of weinig zeggende beschrijvingen die niet ranken in zoekmachines en niet aanspreken bij bezoekers.',
+          'Handmatig rechtzetten kost uren per item — en is bij grote of snel veranderende databanken simpelweg niet vol te houden.',
+        ].map(item => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+            <span class="text-slate-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="hoe-het-werkt" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat onze Data Enrichment doet</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Automatisch aanvullen', body: 'Ontbrekende attributen worden automatisch aangevuld op basis van bestaande informatie, foto\'s en externe bronnen.' },
+          { title: 'Terminologie standaardiseren', body: 'Inconsistente terminologie wordt gestandaardiseerd naar één gemeenschappelijke taal — die jij mee bepaalt.' },
+          { title: 'Beschrijvingen verrijken', body: 'Korte of dunne beschrijvingen worden verrijkt tot volwaardige teksten in jouw tone of voice.' },
+          { title: 'Continu up-to-date', body: 'Nieuwe items worden automatisch verwerkt zodra ze in je systeem komen. Geen handmatige verrijking meer.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-600">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat je ervan merkt</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { icon: '✅', title: 'Volledige, consistente data', body: 'Geen lege velden meer, geen verwarring tussen termen. Alles klopt — automatisch, voor het hele bestand.' },
+          { icon: '🔍', title: 'Betere vindbaarheid', body: 'Rijkere data betekent betere zoekresultaten, betere filters, en betere posities op externe platformen.' },
+          { icon: '📄', title: 'Sterkere content', body: 'Productpagina\'s, pandfiches en collectie-items lezen beter, ranken beter, en converteren beter.' },
+          { icon: '🤝', title: 'Geen werk voor je team', body: 'Geen handmatig invoeren of nakijken meer. Wij houden je data continu op niveau.' },
+        ].map(item => (
+          <div class="bg-white rounded-3xl p-6 flex gap-4">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Voor welke organisaties dit werkt</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {[
+          { icon: '🏠', label: 'Vastgoed', body: 'Volledige, consistente pandfiches. Beter vindbaar op je site en op aggregatoren zoals Immoweb en Zimmo.', href: '/voor-vastgoed' },
+          { icon: '🛒', label: 'E-commerce', body: 'Volledige productdata. Betere filters, betere zoekresultaten, sterkere productpagina\'s.', href: '/voor-ecommerce' },
+          { icon: '🏛️', label: 'Musea & cultuur', body: 'Rijke, consistente collectiedata. Werken worden beter classificeerbaar, vindbaar en ontsluitbaar.', href: '/voor-musea' },
+        ].map(item => (
+          <a href={item.href} class="border border-slate-200 rounded-3xl p-6 hover:shadow-md transition group">
+            <div class="text-2xl mb-3">{item.icon}</div>
+            <h3 class="font-bold mb-2 group-hover:text-brand-600 transition">{item.label}</h3>
+            <p class="text-slate-600 text-sm">{item.body}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Hoe het werkt in de praktijk</h2>
+      <ol class="space-y-4">
+        {[
+          'We analyseren je huidige data en mappen de hiaten.',
+          'We zetten de verrijking op — afgestemd op jouw terminologie en sector.',
+          'We laten de eerste verrijking lopen over je volledige bestand.',
+          'Vanaf dan blijft het automatisch up-to-date.',
+        ].map((step, i) => (
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-spray text-ink rounded-full flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
+            <p class="text-slate-700 pt-1">{step}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="text-slate-500 mt-6 text-sm">Geen migratie, geen nieuwe systemen. We werken bovenop wat je vandaag al gebruikt.</p>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Klaar om je data op niveau te krijgen?</h2>
+      <p class="text-white/70 mb-8">We bekijken graag samen wat er vandaag in je data zit en waar de grootste winst te halen valt. Vrijblijvend, en altijd eerlijk.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

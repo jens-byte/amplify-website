@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Image CDN" description="Snelle beelden, op elke website. Hoogresolutie foto's laden razendsnel — voor elke bezoeker, op elk apparaat.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Foundation · Alle sectoren</p>
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Image CDN</h1>
+      <p class="text-2xl text-slate-300 font-medium mb-4">Snelle beelden, op elke website.</p>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl">Hoogresolutie foto's laden razendsnel — op elke pagina, op elk apparaat, voor elke bezoeker. Wij zetten het op, wij houden het op niveau.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#hoe-het-werkt" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Lees hoe het werkt ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Trage beelden kosten je bezoekers, klanten en ranking</h2>
+      <p class="text-slate-600 mb-6">Foto's zijn je belangrijkste verkoopkracht. Maar ook je grootste prestatiebelasting.</p>
+      <ul class="space-y-4">
+        {[
+          'Bezoekers haken af bij een wachttijd van meer dan drie seconden — vooral op mobiel.',
+          'Google straft trage pagina\'s met een lagere ranking. Je Core Web Vitals-score is direct verbonden met je vindbaarheid.',
+          'Standaard hosting en generieke CDN\'s zijn niet geoptimaliseerd voor het volume en formaat van professionele fotografie.',
+          'Beeldoptimalisatie handmatig doen is tijdrovend en onhoudbaar bij elke nieuwe upload.',
+        ].map(item => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+            <span class="text-slate-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="hoe-het-werkt" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat onze Image CDN doet</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Automatische optimalisatie', body: 'Foto\'s worden automatisch omgezet naar het juiste formaat, resolutie en compressie — voor elk apparaat en elke schermgrootte.' },
+          { title: 'Wereldwijde distributie', body: 'Beelden worden geserveerd vanaf het dichtstbijzijnde netwerkpunt, niet vanaf één centrale server. Sneller, overal.' },
+          { title: 'Werkt op je bestaande website', body: 'Je blijft uploaden zoals je gewend bent — wij doen de rest. Geen veranderingen aan je workflow.' },
+          { title: 'Schaalt mee met je aanbod', body: 'Of het nu om honderd of honderdduizend beelden gaat — de CDN schaalt automatisch mee.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-600">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat je ervan merkt</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { icon: '⚡', title: 'Veel snellere laadtijden', body: 'Bezoekers wachten niet meer. Mobiele bezoekers haken minder snel af. Je site voelt professioneler aan.' },
+          { icon: '📈', title: 'Betere Google-ranking', body: 'Core Web Vitals-scores gaan omhoog. Betere posities in zoekresultaten — vooral voor visuele sectoren.' },
+          { icon: '🎨', title: 'Geen kwaliteitsverlies', body: 'Beelden blijven scherp en professioneel ogen, ook na optimalisatie. Sneller, zonder compromis op kwaliteit.' },
+          { icon: '🤝', title: 'Geen werk voor je team', body: 'Je hoeft niets aan te passen aan hoe je vandaag werkt. Wij zetten het op, wij houden het draaiende.' },
+        ].map(item => (
+          <div class="bg-white rounded-3xl p-6 flex gap-4">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Voor welke organisaties dit werkt</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {[
+          { icon: '🏠', label: 'Vastgoed', body: 'Pandfoto\'s laden razendsnel, ook bij een groot aanbod.', href: '/voor-vastgoed' },
+          { icon: '🛒', label: 'E-commerce', body: 'Productfoto\'s blijven snel, ook bij honderden producten per pagina.', href: '/voor-ecommerce' },
+          { icon: '🏛️', label: 'Musea & cultuur', body: 'Hoogresolutie collectiebeelden blijven toegankelijk zonder traagheid.', href: '/voor-musea' },
+        ].map(item => (
+          <a href={item.href} class="border border-slate-200 rounded-3xl p-6 hover:shadow-md transition group">
+            <div class="text-2xl mb-3">{item.icon}</div>
+            <h3 class="font-bold mb-2 group-hover:text-brand-600 transition">{item.label}</h3>
+            <p class="text-slate-600 text-sm">{item.body}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Hoe het werkt in de praktijk</h2>
+      <ol class="space-y-4">
+        {[
+          'We bekijken je huidige website en beeldverkeer.',
+          'We zetten de CDN op — afgestemd op jouw setup.',
+          'We monitoren prestaties en optimaliseren continu.',
+        ].map((step, i) => (
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-spray text-ink rounded-full flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
+            <p class="text-slate-700 pt-1">{step}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="text-slate-500 mt-6 text-sm">Je hoeft niets te installeren. Je merkt het verschil binnen de eerste dagen.</p>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Klaar om je website te versnellen?</h2>
+      <p class="text-white/70 mb-8">We bekijken graag samen waar de winst te halen valt. Vrijblijvend, en altijd eerlijk.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

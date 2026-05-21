@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Contact" description="Plan een kennismaking met Amplify. Geen verkooppraatje, geen verplichtingen.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Plan een kennismaking</h1>
+      <p class="text-xl text-slate-300 max-w-xl mx-auto">Geen verkooppraatje. Geen verplichtingen. We luisteren naar wat je doet en waar je naartoe wilt — en vertellen je eerlijk wat we voor je kunnen betekenen.</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16">
+
+      <!-- Formulier -->
+      <div>
+        <h2 class="text-2xl font-bold mb-8">Stuur ons een bericht</h2>
+        <form class="space-y-5" action="#" method="POST">
+          <div>
+            <label for="naam" class="block text-sm font-semibold text-slate-700 mb-1.5">Naam</label>
+            <input type="text" id="naam" name="naam" class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition" placeholder="Je naam" />
+          </div>
+          <div>
+            <label for="bedrijf" class="block text-sm font-semibold text-slate-700 mb-1.5">Bedrijf</label>
+            <input type="text" id="bedrijf" name="bedrijf" class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition" placeholder="Naam van je bedrijf" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-slate-700 mb-1.5">E-mail</label>
+            <input type="email" id="email" name="email" class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition" placeholder="je@bedrijf.be" />
+          </div>
+          <div>
+            <label for="sector" class="block text-sm font-semibold text-slate-700 mb-1.5">Sector</label>
+            <select id="sector" name="sector" class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition bg-white">
+              <option value="">Kies je sector</option>
+              <option value="vastgoed">Vastgoed</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="musea">Musea & cultuur</option>
+              <option value="bureau">Webagency / bureau</option>
+              <option value="andere">Andere</option>
+            </select>
+          </div>
+          <div>
+            <label for="bericht" class="block text-sm font-semibold text-slate-700 mb-1.5">Waarover wil je het hebben?</label>
+            <textarea id="bericht" name="bericht" rows="4" class="w-full rounded-2xl border border-slate-200 px-4 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition resize-none" placeholder="Vertel ons kort waar je mee bezig bent en wat je interesseert..."></textarea>
+          </div>
+          <button type="submit" class="w-full bg-brand-600 text-white font-bold px-6 py-4 rounded-2xl hover:bg-brand-700 transition text-base">
+            Stuur bericht
+          </button>
+        </form>
+      </div>
+
+      <!-- Directe contactinfo + verwachtingen -->
+      <div>
+        <h2 class="text-2xl font-bold mb-8">Of bereik ons rechtstreeks</h2>
+        <div class="space-y-6 mb-12">
+          <div class="flex gap-4">
+            <span class="text-2xl">📧</span>
+            <div>
+              <p class="font-semibold text-slate-700">E-mail</p>
+              <a href="mailto:hello@amplify.digital" class="text-brand-600 hover:text-brand-700 transition">hello@amplify.digital</a>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-2xl">📍</span>
+            <div>
+              <p class="font-semibold text-slate-700">Adres</p>
+              <p class="text-slate-600">Beelbroekstraat 99<br/>9040 Sint-Amandsberg<br/>België</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-slate-500 text-sm mb-10">We antwoorden meestal binnen 24 uur op werkdagen.</p>
+
+        <div class="bg-cloud-100 rounded-3xl p-6">
+          <h3 class="font-bold mb-4">Wat er gebeurt nadat je bericht stuurt</h3>
+          <ol class="space-y-3">
+            {[
+              'We nemen contact op binnen 24 uur op werkdagen.',
+              'We plannen een kennismaking — meestal een gesprek van 30 tot 45 minuten, online of bij ons in Gent.',
+              'We luisteren naar je situatie en stellen vragen om te begrijpen waar je staat en waar je naartoe wilt.',
+              'Als we iets voor elkaar kunnen betekenen, stellen we een voorstel op maat voor. Als dat niet zo is, zeggen we dat ook eerlijk.',
+            ].map((step, i) => (
+              <li class="flex gap-3 text-sm text-slate-700">
+                <span class="w-5 h-5 bg-spray text-ink rounded-full flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">{i + 1}</span>
+                {step}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,118 @@
+---
+interface Props {
+  data: any;
+}
+const { data } = Astro.props;
+const { hero, problem, foundation_intro, foundation_products, addon_intro, addon_products, steps_title, steps_intro, steps, why_title, why_items, cta_title, cta_body } = data;
+---
+
+<!-- Hero -->
+<section class="bg-ink text-white py-24 sm:py-32 px-4">
+  <div class="max-w-4xl mx-auto">
+    <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">{hero.eyebrow}</p>
+    <h1 class="text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6">{hero.title}</h1>
+    <p class="text-xl text-white/70 mb-10 max-w-2xl leading-relaxed">{hero.subtitle}</p>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+      <a href="#oplossingen" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Bekijk onze oplossingen ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- Probleem -->
+<section class="py-20 px-4 bg-cloud-100">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight mb-8">{problem.title}</h2>
+    <p class="text-lg text-ink/70 mb-6">{problem.intro}</p>
+    <ul class="space-y-4">
+      {problem.items.map((item: string) => (
+        <li class="flex items-start gap-3">
+          <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+          <span class="text-ink/80">{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<!-- Oplossingen -->
+<section id="oplossingen" class="py-20 px-4">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-12">Wat we doen</h2>
+
+    <div class="mb-12">
+      <div class="inline-flex items-center gap-2 bg-ink text-white px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        Foundation — de basis voor elk traject
+      </div>
+      <p class="text-ink/70 mb-6 max-w-2xl">{foundation_intro}</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        {foundation_products.map((p: any) => (
+          <a href={p.href} class="bg-cloud-100 rounded-3xl p-6 hover:shadow-md transition group">
+            <h3 class="font-bold text-lg mb-2 group-hover:text-spray-darker transition">{p.name}</h3>
+            <p class="text-ink/70">{p.body}</p>
+            <span class="text-spray-darker text-sm font-semibold mt-3 inline-block">Meer info →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div>
+      <div class="inline-flex items-center gap-2 bg-spray-lightest text-spray-darker px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        Add-ons — voor wie er het maximum uit wil halen
+      </div>
+      <p class="text-ink/70 mb-6 max-w-2xl">{addon_intro}</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {addon_products.map((p: any) => (
+          <a href={p.href} class="bg-cloud-100 rounded-3xl p-6 hover:shadow-md transition group">
+            <h3 class="font-bold mb-2 group-hover:text-spray-darker transition">{p.name}</h3>
+            <p class="text-ink/70 text-sm">{p.body}</p>
+            <span class="text-spray-darker text-sm font-semibold mt-3 inline-block">Meer info →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hoe het werkt -->
+<section class="py-20 px-4 bg-cloud-100">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">{steps_title}</h2>
+    <p class="text-ink/70 mb-10">{steps_intro}</p>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {steps.map((step: any, i: number) => (
+        <div class="bg-white rounded-3xl p-6 flex gap-4">
+          <div class="w-10 h-10 bg-spray text-ink rounded-full flex items-center justify-center font-bold shrink-0">{i + 1}</div>
+          <div>
+            <h3 class="font-bold mb-1">{step.title}</h3>
+            <p class="text-ink/70 text-sm">{step.body}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Waarom -->
+<section class="py-20 px-4">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-10">{why_title}</h2>
+    <div class="grid sm:grid-cols-2 gap-6">
+      {why_items.map((item: any) => (
+        <div class="border border-ink/10 rounded-3xl p-6">
+          <h3 class="font-bold mb-2">{item.title}</h3>
+          <p class="text-ink/70">{item.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-4 bg-ink text-white text-center">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight mb-4">{cta_title}</h2>
+    <p class="text-white/70 mb-8">{cta_body}</p>
+    <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+  </div>
+</section>

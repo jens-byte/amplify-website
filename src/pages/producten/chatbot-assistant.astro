@@ -1,0 +1,144 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Chatbot Assistant" description="Een AI-assistent die alleen jouw business kent. 24/7, in jouw tone of voice, binnen de grenzen die jij bepaalt.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Add-on · Alle sectoren</p>
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Chatbot Assistant</h1>
+      <p class="text-2xl text-slate-300 font-medium mb-4">Een AI-assistent die alleen jouw business kent.</p>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl">Bezoekers krijgen direct, correct antwoord op hun vragen — 24/7, in jouw tone of voice, binnen de grenzen die jij bepaalt. Geen generieke AI, geen risico op uitschuivers.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#voorbeelden" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Bekijk hoe het werkt ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Bezoekers hebben vragen. Maar wie geeft het antwoord?</h2>
+      <p class="text-slate-600 mb-6">Je team verliest tijd aan dezelfde vragen, en bezoekers verliezen geduld bij het wachten op een antwoord.</p>
+      <ul class="space-y-4">
+        {[
+          'Standaard FAQ-pagina\'s worden zelden gelezen — bezoekers willen een gesprek, geen rapport.',
+          'Contactformulieren werken traag. Tegen de tijd dat je team antwoordt, is de bezoeker al weg.',
+          'Generieke AI-chatbots zijn slim, maar weten niets van jouw aanbod. Erger: ze verzinnen antwoorden die jouw business kunnen schaden.',
+          'Klassieke chatbots werken met starre keuzemenu\'s. Bezoekers moeten zich aanpassen aan het script — niet andersom.',
+          'Repetitieve vragen vreten tijd van je team — tijd die naar échte verkoop of inhoudelijk werk zou moeten gaan.',
+        ].map(item => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+            <span class="text-slate-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat onze Chatbot Assistant doet</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Getraind op jouw data', body: 'Volledig getraind op producten, panden, collectie, beleid, FAQ\'s, openingsuren — wat er ook relevant is voor jouw organisatie.' },
+          { title: 'Strikt afgebakend domein', body: 'De assistent beantwoordt alleen wat hij mag beantwoorden. Buiten zijn scope geeft hij geen antwoord, maar verwijst naar het juiste contactpunt.' },
+          { title: 'Jouw tone of voice', body: 'Geen generieke AI-formuleringen, geen "als AI-assistent kan ik...". Gewoon natuurlijk gesprek in de taal van je merk.' },
+          { title: 'Naadloze overdracht', body: 'Vragen die buiten scope vallen of waar menselijk contact gewenst is, worden vlot doorgegeven aan je team.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-600">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Voorbeelden per sector -->
+  <section id="voorbeelden" class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Hoe het werkt in de praktijk</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {[
+          {
+            icon: '🏠', label: 'Vastgoed',
+            question: '"Is dit pand huisdiervriendelijk en wat zijn de gemiddelde energiekosten?"',
+            answer: 'De assistent geeft het antwoord op basis van de pandfiche en EPC-info. Vragen over onderhandeling worden doorgegeven aan het kantoor.',
+          },
+          {
+            icon: '🛒', label: 'E-commerce',
+            question: '"Past deze trui ook bij iemand met maat M of moet ik L nemen, en wanneer wordt geleverd als ik nu bestel?"',
+            answer: 'De assistent gebruikt productdata en leveringsinfo om direct te antwoorden. Retourvragen worden doorverwezen naar klantenservice.',
+          },
+          {
+            icon: '🏛️', label: 'Musea & cultuur',
+            question: '"Tot hoe laat zijn jullie open op zondag en is de tentoonstelling rolstoeltoegankelijk?"',
+            answer: 'De assistent geeft direct antwoord op basis van openingsuren, ticketinfo en toegankelijkheidsdata.',
+          },
+        ].map(item => (
+          <div class="bg-white rounded-3xl p-6">
+            <div class="text-2xl mb-2">{item.icon}</div>
+            <h3 class="font-bold mb-3">{item.label}</h3>
+            <div class="bg-cloud-100 rounded-2xl p-3 mb-3">
+              <p class="text-sm italic text-slate-600">{item.question}</p>
+            </div>
+            <p class="text-sm text-slate-700">{item.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat je ervan merkt</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { icon: '🕐', title: '24/7 beantwoorde vragen', body: 'Bezoekers krijgen meteen antwoord, ook \'s avonds, in het weekend of tijdens piekmomenten.' },
+          { icon: '⏰', title: 'Tijd terug voor je team', body: 'Repetitieve vragen verdwijnen uit je inbox en telefoon. Je team houdt tijd over voor inhoudelijk werk.' },
+          { icon: '💬', title: 'Hogere conversie en betrokkenheid', body: 'Bezoekers die antwoord krijgen op hun vraag, blijven langer hangen en converteren beter.' },
+          { icon: '🔒', title: 'Veilig en betrouwbaar', body: 'Omdat de assistent strikt binnen zijn domein blijft, is er geen risico op foute of verzonnen antwoorden.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6 flex gap-4">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Hoe het werkt in de praktijk</h2>
+      <ol class="space-y-4">
+        {[
+          'We bepalen samen het kennisdomein: welke vragen mag de assistent beantwoorden, welke niet.',
+          'We trainen de assistent op jouw data: website-content, productdata, FAQ\'s, beleid, openingsuren.',
+          'We stemmen tone of voice af op je merk en testen uitgebreid voor live gaan.',
+          'We integreren de assistent op je website en blijven monitoren, bijsturen en aanvullen.',
+        ].map((step, i) => (
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-spray text-ink rounded-full flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
+            <p class="text-slate-700 pt-1">{step}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="text-slate-500 mt-6 text-sm">Doorlooptijd: meestal binnen twee tot vier weken live.</p>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Klaar om je bezoekers altijd antwoord te geven?</h2>
+      <p class="text-white/70 mb-8">We bekijken graag samen welke vragen vandaag binnenkomen en hoe een Chatbot Assistant daar slim mee om kan gaan.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

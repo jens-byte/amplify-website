@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Onze aanpak" description="Wij regelen alles. Jij ziet enkel het resultaat. Geen platform, geen huiswerk — gewoon resultaat.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Wij regelen alles.<br/><span class="text-spray">Jij ziet enkel het resultaat.</span></h1>
+      <p class="text-xl text-slate-300 mb-10 max-w-2xl">Geen platform om te leren. Geen team om aan te werven. Geen tools om te beheren. We bouwen, beheren en verbeteren elke oplossing voor je — van eerste gesprek tot dagelijkse optimalisatie.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#hoe-we-te-werk-gaan" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Lees verder ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Waarom we geen platform verkopen</h2>
+      <p class="text-slate-600 mb-6">De meeste leveranciers verkopen een tool. Een dashboard, een licentie, een API. Het is dan aan jou om iemand te vinden die het kan opzetten, gebruiken en op niveau houden.</p>
+      <p class="text-slate-600 mb-6">Wij geloven dat dat niet werkt voor de meeste bedrijven.</p>
+      <ul class="space-y-4 mb-8">
+        {[
+          'Een tool werkt enkel als iemand er continu mee bezig is. De meeste teams hebben die tijd niet.',
+          'De technologie evolueert snel. Wat vandaag goed werkt, kan over drie maanden achterhaald zijn. Bijbenen is een vak apart.',
+          'Expertise opbouwen is duur en traag. Een nieuwe medewerker aanwerven of een agency inhuren neemt maanden — en garandeert geen resultaat.',
+          'Het echte werk zit niet in het opzetten, maar in het continu verbeteren. Dat blijft te vaak liggen.',
+        ].map(item => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+            <span class="text-slate-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="text-xl font-bold text-slate-900">Daarom verkopen we geen platform. We leveren een resultaat.</p>
+    </div>
+  </section>
+
+  <!-- Hoe we te werk gaan -->
+  <section id="hoe-we-te-werk-gaan" class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Hoe we te werk gaan</h2>
+      <p class="text-slate-600 mb-12">Van eerste gesprek tot continue optimalisatie — vier stappen die voor elke klant gelijk lopen.</p>
+      <div class="space-y-6">
+        {[
+          { n: '1', title: 'Kennismaking', body: 'We luisteren naar je situatie, je doelen en wat al draait. Geen verkooppraatje. We kijken eerlijk of we iets voor elkaar kunnen betekenen — en zeggen ook wanneer dat niet zo is.' },
+          { n: '2', title: 'Voorstel op maat', body: 'We stellen een traject voor: welke Foundation- en add-on-oplossingen voor jou zinvol zijn, wat het kost, en wat je mag verwachten. Transparant, modulair, helder.' },
+          { n: '3', title: 'Setup zonder gedoe', body: 'Wij zetten alles op. Geen aanpassingen aan je website, geen tijd van je team, geen developer-trajecten. Je merkt er niets van behalve het eindresultaat.' },
+          { n: '4', title: 'Live en beheerd', body: 'Vanaf dag één draait het — en blijft het draaien. Wij monitoren, sturen bij en verbeteren continu. Maandelijks of periodiek krijg je een overzicht van wat we gedaan hebben en wat het opgeleverd heeft.' },
+        ].map(step => (
+          <div class="flex gap-6 items-start">
+            <div class="w-12 h-12 bg-spray text-ink rounded-full flex items-center justify-center text-xl font-bold shrink-0">{step.n}</div>
+            <div class="bg-cloud-100 rounded-3xl p-6 flex-1">
+              <h3 class="font-bold text-lg mb-2">{step.title}</h3>
+              <p class="text-slate-600">{step.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Wat altijd inbegrepen is -->
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat altijd inbegrepen is bij elk traject</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {[
+          { title: 'Onboarding en setup', body: 'Wij doen het volledige opzetwerk. Geen kosten achteraf, geen verrassingen.' },
+          { title: 'Continue monitoring', body: 'We bewaken prestaties dagelijks en grijpen in voor jij het merkt.' },
+          { title: 'Optimalisatie en verbetering', body: 'We blijven bijsturen op basis van resultaten en evoluties in AI en data.' },
+          { title: 'Eén vast aanspreekpunt', body: 'Iemand bij Amplify die je dossier kent en die je gewoon kan bellen.' },
+          { title: 'Belgisch en bereikbaar', body: 'We zitten in Gent. We spreken je taal — letterlijk en figuurlijk.' },
+          { title: 'Maandelijkse rapportering', body: 'Heldere overzichten van wat we doen en wat het oplevert.' },
+        ].map(item => (
+          <div class="bg-white rounded-3xl p-5 flex gap-3">
+            <span class="text-brand-600 font-bold text-lg">✓</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600 text-sm">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Wat we niet doen -->
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Wat we bewust niet doen</h2>
+      <p class="text-slate-600 mb-10">Net zo belangrijk als wat we wél doen:</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {[
+          { title: 'We verkopen geen software die je zelf moet leren', body: 'Geen dashboards, geen platformen, geen licentiemodellen waarin jij het werk moet doen.' },
+          { title: 'We doen geen migraties of herbouwen je website', body: 'We werken bovenop wat je vandaag hebt. Geen verstoring, geen nieuw CMS.' },
+          { title: 'We verkopen geen tools die we niet zelf beheren', body: 'Alles wat we leveren, beheren we ook. Geen "wij installeren het en succes ermee."' },
+          { title: 'We zeggen geen ja als nee het juiste antwoord is', body: 'Als iets voor jou niet zinvol is, zeggen we dat. Een verkocht product zonder resultaat kost ons meer.' },
+        ].map(item => (
+          <div class="border border-slate-200 rounded-3xl p-6 flex gap-3">
+            <span class="text-red-500 font-bold text-lg shrink-0">✗</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600 text-sm">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Geen lock-in -->
+  <section class="py-20 px-4 bg-brand-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Geen lock-in. Geen lange contracten.</h2>
+      <p class="text-slate-700 text-lg mb-4">We werken op maandelijkse basis, opzegbaar op redelijke termijn. Geen multi-year contracts, geen verborgen clausules.</p>
+      <p class="text-slate-600">Onze redenering: als wij geen waarde leveren, hoor je weg te kunnen. Dat houdt ons scherp en jou veilig.</p>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Klaar om aan tafel te zitten?</h2>
+      <p class="text-white/70 mb-8">We bekijken graag samen of we iets voor elkaar kunnen betekenen. Geen verplichtingen, geen verkooppraatje — gewoon een goed gesprek.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

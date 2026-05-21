@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Content Enrichment & Publishing" description="Sterkere productpagina's en filterpagina's — automatisch, op schaal. Meer organische traffic, betere conversie.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Add-on · E-commerce</p>
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Content Enrichment & Publishing</h1>
+      <p class="text-2xl text-slate-300 font-medium mb-4">Sterkere productpagina's en filterpagina's — automatisch, op schaal.</p>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl">We verrijken je productpagina's en categorie-/filterpagina's met unieke, SEO-vriendelijke content. Meer organische traffic, betere conversie, zonder copywriter.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#wat-we-doen" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Lees hoe het werkt ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Dunne content kost je traffic en conversie</h2>
+      <p class="text-slate-600 mb-6">De meeste webshops hebben pagina's die er technisch wel zijn, maar inhoudelijk te weinig voorstellen.</p>
+      <ul class="space-y-4">
+        {[
+          'Productbeschrijvingen zijn vaak kort, generiek of overgenomen van de leverancier — duizenden webshops gebruiken dezelfde tekst. Google rangschikt dat lager.',
+          'Filterpagina\'s en categoriepagina\'s hebben vaak geen eigen content — en missen daarmee een enorm SEO-potentieel.',
+          'Je webshop is niet zichtbaar in AI-zoekresultaten. Steeds meer bezoekers stellen vragen aan ChatGPT, Google AI Overviews of Perplexity.',
+          'Handmatig content schrijven voor honderden of duizenden pagina\'s is onbetaalbaar en onhoudbaar.',
+          'Externe copywriters zijn traag, duur, en kennen je aanbod niet.',
+        ].map(item => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+            <span class="text-slate-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="wat-we-doen" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat onze Content Enrichment & Publishing doet</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Productbeschrijvingen', body: 'Uitgebreid tot volwaardige teksten, op basis van je productdata, foto\'s en je eigen tone of voice.' },
+          { title: 'Filter- en categoriepagina\'s', body: 'Unieke, SEO-vriendelijke inleidingen die effectief ranken in zoekmachines.' },
+          { title: 'FAQ\'s per pagina', body: 'Relevante FAQ\'s met antwoorden in de taal waarin bezoekers zoeken — de sleutel om opgepikt te worden door AI-zoekmachines.' },
+          { title: 'Automatisch gepubliceerd', body: 'De gegenereerde content wordt automatisch gepubliceerd op je webshop. Geen kopiëren en plakken, geen handmatig invoeren.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-600">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat je ervan merkt</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { icon: '📈', title: 'Meer organische traffic', body: 'Unieke content op product- én filterpagina\'s vertaalt zich direct in betere posities in Google. Vooral op long-tail zoekopdrachten.' },
+          { icon: '🤖', title: 'Zichtbaar in AI-zoekresultaten', body: 'Door FAQ\'s te genereren op alle pagina\'s zorgen we dat jouw producten verschijnen in ChatGPT, Google AI Overviews en Perplexity.' },
+          { icon: '🛒', title: 'Sterkere productpagina\'s', body: 'Bezoekers krijgen meer context en betere informatie. Dat verhoogt vertrouwen en conversie.' },
+          { icon: '🏷️', title: 'Geconverteerde categoriepagina\'s', body: 'Filterpagina\'s die voorheen leeg waren, worden volwaardige landingspagina\'s.' },
+        ].map(item => (
+          <div class="bg-white rounded-3xl p-6 flex gap-4">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Hoe het werkt in de praktijk</h2>
+      <ol class="space-y-4">
+        {[
+          'We bekijken je webshop, je catalogus en je huidige content.',
+          'We stemmen tone of voice en SEO-strategie af op jouw merk en doelgroep.',
+          'We laten de eerste verrijking lopen op alle relevante pagina\'s.',
+          'Vanaf dan blijft het automatisch up-to-date — nieuwe producten en filters krijgen direct hun eigen content.',
+        ].map((step, i) => (
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-spray text-ink rounded-full flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
+            <p class="text-slate-700 pt-1">{step}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="text-slate-500 mt-6 text-sm">Geen migratie, geen nieuwe systemen. We werken bovenop je bestaande webshop.</p>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Klaar om je productpagina's te laten werken voor je?</h2>
+      <p class="text-white/70 mb-8">We bekijken graag samen waar de grootste contentwinst te halen valt. Vrijblijvend, en altijd eerlijk.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

@@ -1,0 +1,10 @@
+---
+import { getEntry } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import SectorTemplate from '../components/SectorTemplate.astro';
+
+const entry = await getEntry('sectors', 'voor-vastgoed');
+---
+<Layout title={entry.data.title} description={entry.data.description}>
+  <SectorTemplate data={entry.data} />
+</Layout>

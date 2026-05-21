@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Prijzen" description="Geen vaste prijslijst. Wel een transparante aanpak. Een voorstel op maat, afgestemd op wat jij écht nodig hebt.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Geen vaste prijslijst.<br/><span class="text-spray">Wel een transparante aanpak.</span></h1>
+      <p class="text-xl text-slate-300 mb-10 max-w-2xl">Elke organisatie heeft een ander aanbod, ander volume en andere uitdagingen. Daarom werken we niet met standaardpakketten, maar met een voorstel dat past bij wat jij écht nodig hebt.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#hoe-we-tot-een-prijs-komen" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Lees verder ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hoe we tot een prijs komen -->
+  <section id="hoe-we-tot-een-prijs-komen" class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Hoe we tot een prijs komen</h2>
+      <p class="text-slate-600 mb-12">In drie stappen, zonder verrassingen.</p>
+      <div class="space-y-6">
+        {[
+          { n: '1', title: 'Kennismaking', body: 'We luisteren naar je situatie, je doelen en wat al draait. Zo weten we waar de grootste winst te halen valt en welke oplossingen voor jou zinvol zijn.' },
+          { n: '2', title: 'Demo en voorstel op maat', body: 'We tonen wat voor jou relevant is, met een heldere offerte per onderdeel. Je ziet exact wat je krijgt en wat je betaalt. Geen pakketten waarin dingen verstopt zitten die je niet nodig hebt.' },
+          { n: '3', title: 'Transparante facturatie', body: 'Maandelijks, met heldere lijnen per onderdeel. Geen opstartkosten verstopt in latere facturen, geen verborgen uurtarieven.' },
+        ].map(step => (
+          <div class="flex gap-6 items-start">
+            <div class="w-12 h-12 bg-spray text-ink rounded-full flex items-center justify-center text-xl font-bold shrink-0">{step.n}</div>
+            <div class="bg-white rounded-3xl p-6 flex-1">
+              <h3 class="font-bold text-lg mb-2">{step.title}</h3>
+              <p class="text-slate-600">{step.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Wat de prijs bepaalt -->
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat de prijs bepaalt</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        {[
+          { title: 'Welke oplossingen je afneemt', body: 'Foundation + de add-ons die voor jou zinvol zijn.' },
+          { title: 'De omvang van je aanbod', body: 'Aantal panden, producten of collectie-items dat we bedienen.' },
+          { title: 'Het serviceniveau dat past', body: 'Van basisbeheer tot proactief partnership met dedicated aanspreekpunt.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-600">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Wat altijd inbegrepen is -->
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat altijd in de prijs zit</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {[
+          'Onboarding en setup — geen aparte opstartfactuur',
+          'Continue monitoring en optimalisatie',
+          'Eén vast aanspreekpunt',
+          'Maandelijkse of periodieke rapportering',
+          'Maandelijks opzegbaar — geen lock-in',
+        ].map(item => (
+          <div class="bg-white rounded-2xl p-4 flex items-center gap-3">
+            <span class="text-brand-600 font-bold">✓</span>
+            <span class="text-slate-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Foundation vs add-ons -->
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Een woord over Foundation en add-ons</h2>
+      <div class="bg-ink text-white rounded-3xl p-10">
+        <p class="text-slate-300 mb-6">We werken met een eenvoudig principe: Foundation eerst, add-ons daarbovenop.</p>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="bg-white/10 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">Met Foundation</h3>
+            <p class="text-slate-300 text-sm">Foundation (Image CDN + Data Enrichment) is de basis waarop alles wat we daarna doen beter werkt. Wie start met Foundation, krijgt het voordeligste tarief op alle add-ons.</p>
+          </div>
+          <div class="bg-white/10 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">Losse add-ons</h3>
+            <p class="text-slate-300 text-sm">Losse add-ons zonder Foundation kunnen ook — maar tegen een hoger tarief. In de meeste gevallen kiezen klanten voor Foundation: betere resultaten én voordeliger.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Vraag een vrijblijvend voorstel</h2>
+      <p class="text-white/70 mb-8">We bekijken samen je situatie en sturen je een helder voorstel — afgestemd op wat voor jou écht zinvol is. Geen verkooppraatje, geen verplichtingen.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

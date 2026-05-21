@@ -1,0 +1,143 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Real Estate Virtual Staging" description="Laat kopers zien wat er kan zijn — op elke pandfoto, in elke stijl. Interactieve virtual staging voor vastgoed.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Add-on · Vastgoed</p>
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Real Estate Virtual Staging</h1>
+      <p class="text-2xl text-slate-300 font-medium mb-4">Laat kopers zien wat er kan zijn — op elke pandfoto, in elke stijl.</p>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl">Bezoekers transformeren met één klik elke originele foto in een ingerichte of gerenoveerde versie. Geen fysieke staging, geen verbouwing — wel een veel sterkere verbeelding van het potentieel.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#vergelijking" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Bekijk een voorbeeld ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Renovatiepanden zijn moeilijker te verkopen — niet omdat ze slecht zijn, maar omdat kopers de mogelijkheden niet zien.</h2>
+      <ul class="space-y-4">
+        {[
+          'Renovatiepanden krijgen minder bezichtigingen omdat ze online minder aantrekkelijk ogen.',
+          'Kopers haken vroeg af, vaak voor ze zelfs contact opnemen — niet omdat het pand niet goed is, maar omdat ze het niet kunnen "zien".',
+          'Klassieke home staging kost €2.000 tot €5.000 per pand, werkt enkel op leegstaande woningen, en vraagt logistieke planning.',
+          'Renderings laten maken door externe partijen kost weken en duizenden euro\'s per pand.',
+        ].map(item => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+            <span class="text-slate-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="font-bold text-lg mt-8 text-slate-900">Wat als kopers het potentieel zelf konden zien — meteen, op je website?</p>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat onze Virtual Staging doet</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Stijl naar keuze', body: 'Een leegstaande ruimte wordt ingericht in een stijl naar keuze (modern, klassiek, scandinavisch, ...).' },
+          { title: 'Renovatie in beeld', body: 'Een verouderde keuken of badkamer wordt gerenoveerd weergegeven, met behoud van de structuur van de originele foto.' },
+          { title: 'Direct in de browser', body: 'Alles gebeurt direct in de browser — geen app, geen wachttijd, geen registratie. De koper klikt, en ziet.' },
+          { title: 'Werkt op je bestaande website', body: 'Via injectie, zonder aanpassingen aan je site of developer. Geen integratie met je CRM nodig.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-600">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat je ervan merkt</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { icon: '⏱️', title: 'Kopers blijven langer op je pandpagina', body: 'Een interactieve voor/na-ervaring is veel boeiender dan statische foto\'s. Bezoekers blijven hangen en contacteren je vaker.' },
+          { icon: '🏡', title: 'Renovatiepanden verkopen sneller', body: 'Kopers zien meteen wat het pand kan worden. De drempel tussen "interessant" en "bezichtiging" wordt kleiner.' },
+          { icon: '⭐', title: 'Onderscheid van andere kantoren', body: 'Geen ander kantoor in de regio biedt een live visualisatie-ervaring op de pandpagina.' },
+          { icon: '🤝', title: 'Geen extra werk voor je team', body: 'Geen foto\'s hoeven opnieuw gemaakt te worden. Geen fysieke staging te organiseren.' },
+        ].map(item => (
+          <div class="bg-white rounded-3xl p-6 flex gap-4">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Vergelijking -->
+  <section id="vergelijking" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Hoe het zich verhoudt tot klassieke alternatieven</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-slate-200">
+              <th class="text-left py-3 pr-6 text-slate-500 font-semibold"></th>
+              <th class="text-left py-3 pr-6 text-slate-700 font-semibold">Klassieke staging</th>
+              <th class="text-left py-3 pr-6 text-slate-700 font-semibold">Renderings</th>
+              <th class="text-left py-3 pr-6 text-brand-600 font-semibold">Amplify Virtual Staging</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {[
+              ['Kostprijs per pand', '€2.000 – €5.000', '€1.000+', 'Vast maandbedrag, onbeperkt'],
+              ['Toepasbaar op', 'Enkel leeg', 'Enkel plan', 'Elk pand, elke staat'],
+              ['Voorbereiding', 'Fysieke planning', 'Plannen aanleveren', 'Werkt op bestaande foto\'s'],
+              ['Doorlooptijd', 'Dagen tot weken', 'Weken', 'Direct'],
+              ['Beleving voor de koper', 'Eén versie', 'Eén versie', 'Interactief, in browser'],
+            ].map(row => (
+              <tr>
+                <td class="py-3 pr-6 text-slate-500 font-medium">{row[0]}</td>
+                <td class="py-3 pr-6 text-slate-700">{row[1]}</td>
+                <td class="py-3 pr-6 text-slate-700">{row[2]}</td>
+                <td class="py-3 pr-6 text-brand-600 font-semibold">{row[3]}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Hoe het werkt in de praktijk</h2>
+      <ol class="space-y-4">
+        {[
+          'We bekijken je huidige website en pandaanbod.',
+          'We stemmen de stijlen en categorieën af op jouw positionering en doelgroep.',
+          'We zetten de injectie op je site op — zonder tussenkomst van je developer.',
+          'Vanaf dat moment is de Virtual Staging beschikbaar op elke pandpagina.',
+        ].map((step, i) => (
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-spray text-ink rounded-full flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
+            <p class="text-slate-700 pt-1">{step}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="text-slate-500 mt-6 text-sm">Doorlooptijd: meestal binnen één tot twee weken live.</p>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Klaar om kopers het potentieel te tonen?</h2>
+      <p class="text-white/70 mb-8">We bekijken graag een pand uit je aanbod en laten zien wat het kan worden. Vrijblijvend, en altijd eerlijk.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

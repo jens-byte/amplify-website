@@ -1,0 +1,138 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Conversational Smart Search" description="Een zoekfunctie die begrijpt en bezoekers begeleidt. Geen lege zoekbalk, geen doodlopende filters.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Add-on · Alle sectoren</p>
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Conversational Smart Search</h1>
+      <p class="text-2xl text-slate-300 font-medium mb-4">Een zoekfunctie die begrijpt en bezoekers begeleidt.</p>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl">Bezoekers typen wat ze zoeken in natuurlijke taal — wij zetten dat live om in slimme filtersuggesties die hen naar de juiste resultaten leiden. Geen lege zoekbalk, geen doodlopende filters.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#voorbeelden" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Bekijk hoe het werkt ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">De zoekfunctie van je website is je grootste verloren kans</h2>
+      <p class="text-slate-600 mb-6">Bezoekers die de zoekbalk gebruiken, zijn de meest gemotiveerde mensen op je site. Maar tussen "weten wat ze zoeken" en "vinden wat ze zoeken" zit vaak een muur.</p>
+      <ul class="space-y-4">
+        {[
+          'Standaard zoekvelden werken op exacte trefwoorden. "Huis met tuin in Gent onder 400k" geeft nul resultaten als die exacte woorden niet in een fiche staan.',
+          'Bezoekers zoeken steeds vaker zoals ze tegen ChatGPT zouden praten: in volle zinnen, met context. Klassieke zoeksystemen kunnen daar niets mee.',
+          'Een volledig vrije AI-zoekbalk werkt ook niet: bezoekers weten vaak niet wat ze kunnen typen en haken af bij een leeg invoerveld.',
+          'Filters zijn dan weer een doolhof. Wie geen geduld heeft om door twaalf filters te klikken, verliest zich in je site.',
+        ].map(item => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+            <span class="text-slate-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat onze Smart Search doet</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Natuurlijke taal begrijpen', body: 'Bezoekers typen zoals ze denken: "warm jasje voor de winter onder honderd euro" of "huis met tuin dichtbij Gent onder 400k".' },
+          { title: 'Live filtersuggesties', body: 'Terwijl ze typen, herkennen we wat ze bedoelen en stellen we de bijhorende filters voor. De bezoeker bevestigt met één klik.' },
+          { title: 'Begeleiding zonder verlamming', body: 'Geen lege zoekbalk en geen rigide filterpaneel. Wel begeleiding op het juiste moment.' },
+          { title: 'Leert bij over tijd', body: 'Wat bezoekers vaak zoeken, wordt steeds sneller en accurater voorgesteld. Het systeem verbetert continu.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-600">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Voorbeelden per sector -->
+  <section id="voorbeelden" class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Hoe het werkt in de praktijk</h2>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="bg-white rounded-3xl p-6">
+          <div class="text-2xl mb-3">🏠</div>
+          <h3 class="font-bold mb-3">Vastgoed</h3>
+          <div class="bg-cloud-100 rounded-2xl p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-1">Bezoeker typt:</p>
+            <p class="text-sm italic font-medium">"huis met tuin dichtbij Gent, max 400k"</p>
+          </div>
+          <ul class="space-y-1 text-sm text-slate-700">
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Type: huis</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Regio: Gent en omgeving</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Maximumprijs: €400.000</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Kenmerk: tuin</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-3xl p-6">
+          <div class="text-2xl mb-3">🛒</div>
+          <h3 class="font-bold mb-3">E-commerce</h3>
+          <div class="bg-cloud-100 rounded-2xl p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-1">Bezoeker typt:</p>
+            <p class="text-sm italic font-medium">"warme winterjas voor dames, waterdicht"</p>
+          </div>
+          <ul class="space-y-1 text-sm text-slate-700">
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Categorie: jassen</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Seizoen: winter</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Doelgroep: dames</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Eigenschap: waterdicht</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-3xl p-6">
+          <div class="text-2xl mb-3">🏛️</div>
+          <h3 class="font-bold mb-3">Musea & cultuur</h3>
+          <div class="bg-cloud-100 rounded-2xl p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-1">Bezoeker typt:</p>
+            <p class="text-sm italic font-medium">"schilderijen met paarden uit de 19e eeuw"</p>
+          </div>
+          <ul class="space-y-1 text-sm text-slate-700">
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Type werk: schilderij</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Periode: 19e eeuw</li>
+            <li class="flex items-center gap-2"><span class="text-green-600">✓</span> Onderwerp: paarden</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat je ervan merkt</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { icon: '🎯', title: 'Drastisch minder lege zoekresultaten', body: 'Bezoekers krijgen relevante resultaten, ook bij vage of informele zoekopdrachten. Geen doodlopende straten meer.' },
+          { icon: '🧭', title: 'Begeleiding in plaats van verlamming', body: 'Bezoekers worden actief geleid naar de juiste filters — op basis van hun eigen woorden.' },
+          { icon: '💬', title: 'Meer contactaanvragen en conversies', body: 'Wie sneller vindt wat hij zoekt, neemt sneller contact op. Eén van de directste hefbomen op conversie.' },
+          { icon: '🤖', title: 'Klaar voor AI-gedreven bezoekers', body: 'Bezoekers die gewend zijn aan ChatGPT verwachten hetzelfde op je website. Met Smart Search loop je vooruit.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6 flex gap-4">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Klaar om je bezoekers eindelijk te laten vinden wat ze zoeken?</h2>
+      <p class="text-white/70 mb-8">We bekijken graag samen hoe je huidige zoekfunctie presteert en wat er beter kan. Vrijblijvend, en altijd eerlijk.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

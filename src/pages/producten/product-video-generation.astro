@@ -1,0 +1,107 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout title="Product Video Generation" description="Productvideo's voor je hele catalogus — automatisch gegenereerd, automatisch gepubliceerd.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Add-on · E-commerce</p>
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">Product Video Generation</h1>
+      <p class="text-2xl text-slate-300 font-medium mb-4">Productvideo's voor je hele catalogus — automatisch gegenereerd, automatisch gepubliceerd.</p>
+      <p class="text-xl text-slate-400 mb-10 max-w-2xl">We zetten je bestaande product- en modelfoto's om in korte, professionele video's en integreren ze automatisch in je webshop. Geen filmploeg, geen montagestudio, geen wekenlange productie.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block text-center">Plan een kennismaking</a>
+        <a href="#wat-we-doen" class="bg-white/10 text-white font-semibold px-6 py-3 rounded-full hover:bg-white/20 transition border border-white/20 inline-block text-center">Bekijk een voorbeeld ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-6">Statische foto's overtuigen steeds minder</h2>
+      <p class="text-slate-600 mb-6">Bezoekers verwachten beweging, context en sfeer — net zoals ze die krijgen op social media en bij de grote internationale spelers.</p>
+      <ul class="space-y-4">
+        {[
+          'Productpagina\'s zonder video voelen minder professioneel en minder overtuigend dan die van concurrenten die wel investeren in beeld.',
+          'Bezoekers haken sneller af op statische pagina\'s. Video houdt aandacht vast, verlengt de sessieduur en verhoogt conversie.',
+          'Eigen videoproductie is duur, traag en moeilijk te schalen. Voor honderden of duizenden producten is het simpelweg niet haalbaar.',
+          'Video laten maken door externe productiehuizen kost honderden tot duizenden euro\'s per product, met wekenlange doorlooptijd.',
+        ].map(item => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 bg-spray-dark rounded-full mt-2.5 shrink-0"></span>
+            <span class="text-slate-700">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="wat-we-doen" class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat onze Product Video Generation doet</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Vertrek van bestaand beeldmateriaal', body: 'We werken met je bestaande product- en modelfoto\'s. Geen nieuwe shoot nodig, geen aanlevering van bronmateriaal.' },
+          { title: 'Beweging en sfeer', body: 'De gegenereerde video\'s tonen je producten vanuit verschillende hoeken, met beweging die de aandacht vasthoudt.' },
+          { title: 'Consistent over je catalogus', body: 'Stijl, lengte en pacing worden afgestemd op je merk — consistent over de hele catalogus heen.' },
+          { title: 'Automatisch geïntegreerd', body: 'Video\'s worden automatisch op de juiste plek geïntegreerd in je productpagina\'s. Geen handmatig uploaden.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6">
+            <h3 class="font-bold mb-2">{item.title}</h3>
+            <p class="text-slate-600">{item.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat je ervan merkt</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { icon: '📊', title: 'Hogere conversie', body: 'Bezoekers blijven langer hangen en converteren beter. Video verhoogt vertrouwen, vooral bij hogere prijsklassen.' },
+          { icon: '⭐', title: 'Onderscheid van concurrenten', body: 'De meeste webshops hebben nog steeds enkel statische foto\'s. Met video val je op en verdedig je je marges beter.' },
+          { icon: '📱', title: 'Materiaal voor social en advertising', body: 'De gegenereerde video\'s zijn ook bruikbaar op social media, in advertenties of nieuwsbrieven. Eén productie, meerdere kanalen.' },
+          { icon: '🔄', title: 'Schaalbaar op je hele catalogus', body: 'Of je nu honderd of tienduizend producten hebt: alles krijgt een video. Onmogelijk met klassieke videoproductie.' },
+        ].map(item => (
+          <div class="bg-white rounded-3xl p-6 flex gap-4">
+            <span class="text-2xl">{item.icon}</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 px-4 bg-cloud-100">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8">Hoe het werkt in de praktijk</h2>
+      <ol class="space-y-4">
+        {[
+          'We bekijken je webshop, je beeldmateriaal en je productcategorieën.',
+          'We stemmen stijl, lengte en pacing af op je merk en doelgroep.',
+          'We genereren een eerste batch en valideren samen het resultaat.',
+          'Vanaf dan loopt het automatisch — nieuwe producten krijgen direct hun eigen video.',
+        ].map((step, i) => (
+          <li class="flex items-start gap-4">
+            <div class="w-8 h-8 bg-spray text-ink rounded-full flex items-center justify-center font-bold text-sm shrink-0">{i + 1}</div>
+            <p class="text-slate-700 pt-1">{step}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Klaar om je productpagina's tot leven te brengen?</h2>
+      <p class="text-white/70 mb-8">We genereren graag een voorbeeldvideo op basis van een product uit je eigen catalogus. Vrijblijvend, en altijd eerlijk.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>

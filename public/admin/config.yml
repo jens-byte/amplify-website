@@ -1,0 +1,165 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: 'Add {{collection}} "{{slug}}"'
+    update: 'Update {{collection}} "{{slug}}"'
+    delete: 'Delete {{collection}} "{{slug}}"'
+    uploadMedia: 'Upload "{{path}}"'
+    deleteMedia: 'Delete "{{path}}"'
+
+locale: 'nl'
+
+media_folder: 'public/uploads'
+public_folder: '/uploads'
+
+editor:
+  preview: false
+
+collections:
+  # ============================================================
+  # HOME PAGE
+  # ============================================================
+  - name: 'home'
+    label: 'Homepage'
+    label_singular: 'Homepage'
+    folder: 'src/content/home'
+    create: false
+    delete: false
+    slug: 'home'
+    fields:
+      - { label: 'Pagina titel (browser tab)', name: 'title', widget: 'string' }
+      - { label: 'Meta beschrijving', name: 'description', widget: 'string' }
+      - label: 'Hero'
+        name: 'hero'
+        widget: 'object'
+        fields:
+          - { label: 'Badge tekst', name: 'badge', widget: 'string', hint: 'Klein label boven titel' }
+          - { label: 'Titel', name: 'title', widget: 'string', hint: 'Gebruik *woord* om turquoise highlight te krijgen' }
+          - { label: 'Subtitel', name: 'subtitle', widget: 'text' }
+          - { label: 'Knop 1 — tekst', name: 'cta1_text', widget: 'string' }
+          - { label: 'Knop 1 — link', name: 'cta1_href', widget: 'string', default: '/contact' }
+          - { label: 'Knop 2 — tekst', name: 'cta2_text', widget: 'string' }
+          - { label: 'Knop 2 — link', name: 'cta2_href', widget: 'string', default: '/producten' }
+      - label: 'Sectie: Wat dat betekent'
+        name: 'value_props'
+        widget: 'object'
+        fields:
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Intro', name: 'intro', widget: 'text' }
+          - { label: 'Slimmer — Titel', name: 'slimmer_title', widget: 'string' }
+          - { label: 'Slimmer — Beschrijving', name: 'slimmer_body', widget: 'text' }
+          - { label: 'Overtuigender — Titel', name: 'overtuigender_title', widget: 'string' }
+          - { label: 'Overtuigender — Beschrijving', name: 'overtuigender_body', widget: 'text' }
+          - { label: 'Sneller — Titel', name: 'sneller_title', widget: 'string' }
+          - { label: 'Sneller — Beschrijving', name: 'sneller_body', widget: 'text' }
+      - label: 'Sectie: Voor wie'
+        name: 'audience'
+        widget: 'object'
+        fields:
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Intro', name: 'intro', widget: 'text' }
+          - { label: 'Vastgoed — Beschrijving', name: 'vastgoed', widget: 'text' }
+          - { label: 'E-commerce — Beschrijving', name: 'ecommerce', widget: 'text' }
+          - { label: 'Musea — Beschrijving', name: 'musea', widget: 'text' }
+      - label: 'Sectie: Hoe we werken'
+        name: 'how'
+        widget: 'object'
+        fields:
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Intro', name: 'intro', widget: 'string' }
+          - { label: 'Stap 1 — Titel', name: 'step1_title', widget: 'string' }
+          - { label: 'Stap 1 — Beschrijving', name: 'step1_body', widget: 'text' }
+          - { label: 'Stap 2 — Titel', name: 'step2_title', widget: 'string' }
+          - { label: 'Stap 2 — Beschrijving', name: 'step2_body', widget: 'text' }
+          - { label: 'Stap 3 — Titel', name: 'step3_title', widget: 'string' }
+          - { label: 'Stap 3 — Beschrijving', name: 'step3_body', widget: 'text' }
+      - label: 'Sectie: Waarom Amplify'
+        name: 'why'
+        widget: 'object'
+        fields:
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Intro', name: 'intro', widget: 'text' }
+          - label: 'Punten'
+            name: 'items'
+            widget: 'list'
+            fields:
+              - { label: 'Titel', name: 'title', widget: 'string' }
+              - { label: 'Beschrijving', name: 'body', widget: 'text' }
+      - label: 'Testimonial'
+        name: 'testimonial'
+        widget: 'object'
+        fields:
+          - { label: 'Quote', name: 'quote', widget: 'text' }
+          - { label: 'Naam / functie', name: 'attribution', widget: 'string' }
+      - label: 'Slot CTA'
+        name: 'cta'
+        widget: 'object'
+        fields:
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'text' }
+          - { label: 'Knop tekst', name: 'cta_text', widget: 'string', default: 'Plan een kennismaking' }
+
+  # ============================================================
+  # SECTOR PAGES (vastgoed, e-commerce, musea)
+  # ============================================================
+  - name: 'sectors'
+    label: 'Sectorpagina''s'
+    label_singular: 'Sectorpagina'
+    folder: 'src/content/sectors'
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    fields:
+      - { label: 'Pagina titel (browser tab)', name: 'title', widget: 'string' }
+      - { label: 'Meta beschrijving', name: 'description', widget: 'string' }
+      - label: 'Hero'
+        name: 'hero'
+        widget: 'object'
+        fields:
+          - { label: 'Eyebrow', name: 'eyebrow', widget: 'string' }
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Subtitel', name: 'subtitle', widget: 'text' }
+      - label: 'Probleem sectie'
+        name: 'problem'
+        widget: 'object'
+        fields:
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Intro', name: 'intro', widget: 'text' }
+          - label: 'Lijst items'
+            name: 'items'
+            widget: 'list'
+            field: { label: 'Item', name: 'item', widget: 'text' }
+      - { label: 'Foundation intro', name: 'foundation_intro', widget: 'text' }
+      - label: 'Foundation producten'
+        name: 'foundation_products'
+        widget: 'list'
+        fields:
+          - { label: 'Naam', name: 'name', widget: 'string' }
+          - { label: 'Link', name: 'href', widget: 'string' }
+          - { label: 'Beschrijving', name: 'body', widget: 'text' }
+      - { label: 'Add-on intro', name: 'addon_intro', widget: 'string' }
+      - label: 'Add-on producten'
+        name: 'addon_products'
+        widget: 'list'
+        fields:
+          - { label: 'Naam', name: 'name', widget: 'string' }
+          - { label: 'Link', name: 'href', widget: 'string' }
+          - { label: 'Beschrijving', name: 'body', widget: 'text' }
+      - { label: 'Hoe het werkt — Titel', name: 'steps_title', widget: 'string' }
+      - { label: 'Hoe het werkt — Intro', name: 'steps_intro', widget: 'string' }
+      - label: 'Stappen'
+        name: 'steps'
+        widget: 'list'
+        fields:
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Beschrijving', name: 'body', widget: 'text' }
+      - { label: 'Waarom — Titel', name: 'why_title', widget: 'string' }
+      - label: 'Waarom — Punten'
+        name: 'why_items'
+        widget: 'list'
+        fields:
+          - { label: 'Titel', name: 'title', widget: 'string' }
+          - { label: 'Beschrijving', name: 'body', widget: 'text' }
+      - { label: 'CTA — Titel', name: 'cta_title', widget: 'string' }
+      - { label: 'CTA — Body', name: 'cta_body', widget: 'text' }

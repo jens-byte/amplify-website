@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Voor webagencies en marketingbureaus" description="Versterk je dienstenaanbod met AI en data — zonder zelf alles te moeten bouwen.">
+
+  <section class="bg-ink text-white py-24 sm:py-32 px-4">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-spray font-semibold mb-3 text-sm uppercase tracking-wide">Voor webagencies en marketingbureaus</p>
+      <h1 class="text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6">
+        Versterk je dienstenaanbod met AI en data —<br/>zonder zelf alles te moeten bouwen.
+      </h1>
+      <p class="text-xl text-slate-300 mb-10 max-w-2xl">
+        We werken samen met agencies die hun klanten meer willen bieden, zonder zelf een AI-team te moeten opzetten. Jij behoudt de klantrelatie. Wij doen het werk achter de schermen.
+      </p>
+      <a href="/contact" class="bg-spray text-ink font-semibold px-6 py-3 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+  <section class="py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-10">Wat een samenwerking je oplevert</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        {[
+          { title: 'Uitbreiding van je aanbod', body: 'Zonder eigen R&D of team. Je kan vanaf morgen AI- en data-oplossingen aanbieden aan je klanten.' },
+          { title: 'Wij blijven achter de schermen', body: 'Jij behoudt de klantrelatie en de zichtbaarheid bij je klant. Wij zijn de onzichtbare uitvoerder.' },
+          { title: 'Marges op alle oplossingen', body: 'Op alle oplossingen die je doorverkoopt, afgestemd in een persoonlijke afspraak.' },
+          { title: 'Eén vast aanspreekpunt', body: 'Iemand bij Amplify die jouw klanten en hun context kent — geen wisselende contacten.' },
+          { title: 'Geen exclusiviteitseisen', body: 'Geen lock-in. Je beslist per project of we meedoen. Maximale flexibiliteit.' },
+        ].map(item => (
+          <div class="bg-cloud-100 rounded-3xl p-6 flex gap-3">
+            <span class="text-brand-600 font-bold text-lg shrink-0">→</span>
+            <div>
+              <h3 class="font-bold mb-1">{item.title}</h3>
+              <p class="text-slate-600">{item.body}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-4 bg-ink text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Klaar om samen te werken?</h2>
+      <p class="text-white/70 mb-8">We bekijken graag waar onze oplossingen jouw aanbod kunnen versterken. Vrijblijvend, en altijd eerlijk.</p>
+      <a href="/contact" class="bg-spray text-ink font-bold px-8 py-4 rounded-full hover:bg-spray-light transition inline-block">Plan een kennismaking</a>
+    </div>
+  </section>
+
+</Layout>
